@@ -46,23 +46,15 @@ struct CustomDialog: View {
             .padding()
             .background(.white)
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            .overlay {
-                VStack {
-                    HStack {
-                        Spacer()
-
-                        Button {
-                            close()
-                        } label: {
-                            Image(systemName: "xmark")
-                                .font(.title2)
-                                .fontWeight(.medium)
-                        }
-                        .tint(.black)
-                    }
-
-                    Spacer()
+            .overlay(alignment: .topTrailing) {
+                Button {
+                    close()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.title2)
+                        .fontWeight(.medium)
                 }
+                .tint(.black)
                 .padding()
             }
             .shadow(radius: 20)
